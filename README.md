@@ -4,7 +4,7 @@ Repositorio de avance de tarea de clases de docker y kubernetes
 
 # Tareas - Curso Docker & Kubernetes
 
-**Estudiante:** [Cesar Acarapi]
+**Estudiante:** `Cesar Alejandro Acarapi Calderon`
 **Curso:** [Docker & Kubernetes - i-Quattro](https://www.i-quattro.com/product-page/dok-kub-001)
 
 ## Sobre este repositorio

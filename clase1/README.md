@@ -37,36 +37,36 @@ Para la aplicación que elegiste:
 
 ### 1. Ejecutar el container
 
-\`\`\`bash
+```bash
 docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=Zorro1 --name mi-mysql mysql:latest
-\`\`\`
+```
 
 **Explicación:** 
 Este comando
-`docker run` → Crea y ejecuta un container 
-`-d` → Aplicar en segundo plano 
-`-p 3306:3306` → Publica el mapeo del puerto 3306 de mi máquina al puerto 3306 del container 
-`-e MYSQL_ROOT_PASSWORD=Zorro1`
-`-e` → Significa environment variable (variable de entorno)
-`MYSQL_ROOT_PASSWORD=Zorro1` → Le dice al contenedor cuál será la contraseña del usuario root, es obligatoria para MySQL
-`--name mi-mysql`
-`--name` → Asigna un nombre personalizado al contenedor en este caso el nombre de mi-mysql
-`mysql:latest`
-`mysql` → Nombre del repositorio (imagen oficial de MySQL en Docker Hub)
-`:latest` → Indica que se use la versión más reciente (por defecto)
+- `docker run` → Crea y ejecuta un container 
+- `-d` → Aplicar en segundo plano 
+- `-p 3306:3306` → Publica el mapeo del puerto 3306 de mi máquina al puerto 3306 del container 
+- `-e MYSQL_ROOT_PASSWORD=Zorro1`
+- `-e` → Significa environment variable (variable de entorno)
+- `MYSQL_ROOT_PASSWORD=Zorro1` → Le dice al contenedor cuál será la contraseña del usuario root, es obligatoria para MySQL
+- `--name mi-mysql`
+- `--name` → Asigna un nombre personalizado al contenedor en este caso el nombre de mi-mysql
+- `mysql:latest`
+- `mysql` → Nombre del repositorio (imagen oficial de MySQL en Docker Hub)
+- `:latest` → Indica que se use la versión más reciente (por defecto)
 
 **Salida:**
-\`\`\`
+```
 6e8edf9dade9ae67acbcc6ebe2c823bbfa7bdf0b449b5471f72b1a3f305bd121
-\`\`\`
+```
 
 ### 2. Verificar que está corriendo
 
 **- Lista los containers en ejecución**
 
-\`\`\`bash
+```bash
 docker ps
-\`\`\`
+```
 
 **Screenshot:**
 
@@ -74,9 +74,9 @@ docker ps
 
 **- Consulta los logs del container**
 
-\`\`\`bash
+```bash
 docker logs mi-mysql
-\`\`\`
+```
 
 **Screenshot:**
 
@@ -84,9 +84,9 @@ docker logs mi-mysql
 
 **- Accediendo al servicio**
 
-\`\`\`bash
+```bash
 docker exec -it mi-mysql mysql -uroot -p
-\`\`\`
+```
 
 **Screenshot: En este caso nos pedira la contraseña que definimos para root y dentro podemos ver (SHOW DATABASES;) para salir exit**
 
@@ -96,9 +96,9 @@ docker exec -it mi-mysql mysql -uroot -p
 
 **- Deteniendo el container**
 
-\`\`\`bash
+```bash
 docker stop mi-mysql
-\`\`\`
+```
 
 **Screenshot:**
 
@@ -106,9 +106,9 @@ docker stop mi-mysql
 
 **- Eliminando el container**
 
-\`\`\`bash
+```bash
 docker rm mi-mysql
-\`\`\`
+```
 
 **Screenshot:**
 
@@ -116,9 +116,9 @@ docker rm mi-mysql
 
 **- Verificando que ya no existe el container**
 
-\`\`\`bash
+```bash
 docker ps -a
-\`\`\`
+```
 
 **Screenshot:**
 
