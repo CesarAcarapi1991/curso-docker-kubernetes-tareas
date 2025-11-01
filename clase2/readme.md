@@ -151,7 +151,7 @@ docker run -d -p 3000:3000 --name mi-app mi-app:1.0
 - `Navegador o curl` probando los EndPoints  
 - `docker logs`  
 
-![alt text](testing-local.png)
+![alt text](screenshots/testing-local.png)
 
 ## 5. Publicación de Docker Hub
 ### Crear el repositorio en DockerHub
@@ -177,7 +177,7 @@ En este caso se uso multi-stage y los tamaños son los mismos
 ```
 docker images
 ```
-![alt text](comparar-tamaño.png)
+![alt text](screenshots/comparar-tamaño.png)
 ### Capas de la imagen(`docker history`)
 ```
 docker history cesaracarapi/mi-app:1.0
