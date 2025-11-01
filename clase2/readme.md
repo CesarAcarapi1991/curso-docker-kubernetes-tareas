@@ -177,6 +177,7 @@ En este caso se uso multi-stage y los tamaños son los mismos
 ```
 docker images
 ```
+![alt text](comparar-tamaño.png)
 ### Capas de la imagen(`docker history`)
 ```
 docker history cesaracarapi/mi-app:1.0
