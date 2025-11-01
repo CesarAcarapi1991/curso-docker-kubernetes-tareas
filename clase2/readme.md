@@ -87,7 +87,11 @@ RUN npm install --only=production
 # Copiar el resto del código
 COPY . .
 ```
-
+Este bloque:  
+- Crea un contenedor con Node 18  
+- Copia tu proyecto  
+- Instala dependencias necesarias para producción  
+- Prepara todo para la siguiente fase (generalmente build o empaquetado)
 ### Stage 2: Production
 ```
 # -------- STAGE 2: Producción --------
@@ -102,14 +106,17 @@ WORKDIR /app
 # Copiar solo lo necesario desde el builder
 COPY --from=builder /app /app
 ```
-
+Este bloque:
+- Hace la imagen final más liviana, copiando solo lo necesario  
+- Mantiene buena seguridad usando usuario no-root  
+- Solo contiene el runtime para ejecutar la aplicación (no herramientas extra)
 
 **Explicación:**
 
 | Stage | Propósito |
 |-------|-----------|
-| Build | Instalar todas las dependencias... |
-| Production | Solo runtime... |
+| Build | Instalar todas las dependencias necesarias, copiar el código fuente, generar el build de la aplicación y preparar artefactos listos para producción. También permite optimizar usando caché y no incluir herramientas o archivos innecesarios en la imagen final. |
+| Production | Crea una imagen ligera y segura para ejecutar la aplicación. Solo contiene el código generado y las dependencias mínimas necesarias para correr en producción. Reduce tamaño, mejora seguridad y evita incluir toolchains de compilación. |
 
 ## 3. Proceso de Build
 
