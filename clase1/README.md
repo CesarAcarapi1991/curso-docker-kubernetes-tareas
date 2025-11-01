@@ -1,4 +1,4 @@
-# Clase 1 - Introducción a Containers y Docker
+# Tarea 1: Configuración de Repositorio y Primer Desafío
 
 ## Objetivo
 
